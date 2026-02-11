@@ -14,6 +14,8 @@ import { Toaster } from "./components/refine-ui/notification/toaster";
 import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import Dashboard from "./pages/dashboard";
+import CreateSubject from "./pages/subjects/create";
+import SubjectsList from "./pages/subjects/list";
 import { dataProvider } from "./providers/data";
 
 function App() {
@@ -54,6 +56,13 @@ function App() {
                   }
                 >
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="subjects">
+                    <Route path="/subjects" element={<SubjectsList />} />
+                    <Route
+                      path="/subjects/create"
+                      element={<CreateSubject />}
+                    />
+                  </Route>
                 </Route>
               </Routes>
               <Toaster />

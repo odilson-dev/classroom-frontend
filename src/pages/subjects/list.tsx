@@ -1,9 +1,9 @@
-const List = () => {
+const SubjectsList = () => {
   return (
     <div>
-      <h1>List</h1>
+      <h1>Subjects List</h1>
     </div>
   );
 };
 
-export default List;
+export default SubjectsList;

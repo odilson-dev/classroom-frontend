@@ -87,7 +87,7 @@ const SubjectsList = () => {
           id: "actions",
           size: 100,
           header: () => <p className="column-title">Actions</p>,
-          cell: ({ row }) => {
+          cell: () => {
             <div className="flex gap-2">
               <EditButton resource="subjects" />
               <DeleteButton resource="subjects" />

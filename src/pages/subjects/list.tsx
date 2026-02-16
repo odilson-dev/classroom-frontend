@@ -43,21 +43,19 @@ const SubjectsList = () => {
       () => [
         {
           id: "code",
-          accesorKey: "code",
+          accessorKey: "code",
           size: 100,
           header: () => <p className="column-title ml-2">Code</p>,
-          cell: ({ getValue }) => {
-            <Badge>{getValue<string>()}</Badge>;
-          },
+          cell: ({ getValue }) => <Badge>{getValue<string>()}</Badge>,
         },
         {
           id: "name",
           accessorKey: "name",
           size: 200,
           header: () => <p className="column-title">Name</p>,
-          cell: ({ getValue }) => {
-            <span className="text-foreground">{getValue<string>()}</span>;
-          },
+          cell: ({ getValue }) => (
+            <span className="text-foreground">{getValue<string>()}</span>
+          ),
           filterFn: "includesString",
         },
 
@@ -66,33 +64,33 @@ const SubjectsList = () => {
           accessorKey: "department",
           size: 150,
           header: () => <p className="column-title">Department</p>,
-          cell: ({ getValue }) => {
-            <Badge variant="secondary">{getValue<string>()}</Badge>;
-          },
+          cell: ({ getValue }) => (
+            <Badge variant="secondary">{getValue<string>()}</Badge>
+          ),
           filterFn: "equalsString",
         },
         {
-          id: "desciption",
+          id: "description",
           accessorKey: "description",
           size: 200,
           header: () => <p className="column-title">Description</p>,
-          cell: ({ getValue }) => {
+          cell: ({ getValue }) => (
             <span className="text-foreground truncate line-clamp-2">
               {getValue<string>()}
-            </span>;
-          },
+            </span>
+          ),
           filterFn: "includesString",
         },
         {
           id: "actions",
           size: 100,
           header: () => <p className="column-title">Actions</p>,
-          cell: ({ row }) => {
+          cell: () => (
             <div className="flex gap-2">
               <EditButton resource="subjects" />
               <DeleteButton resource="subjects" />
-            </div>;
-          },
+            </div>
+          ),
         },
       ],
       [],
